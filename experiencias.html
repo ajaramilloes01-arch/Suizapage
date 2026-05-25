@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Vive las mejores experiencias en Suiza: gastronomía típica y cultura con museos, festivales y patrimonio histórico.">
+  <title>Experiencias — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+
+    .filtros {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 32px 0 40px;
+    }
+
+    .filtro-btn {
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: 2px solid #e4002b;
+      background: transparent;
+      color: #e4002b;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .filtro-btn:hover {
+      background: #e4002b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .filtro-btn.activo {
+      background: #e4002b;
+      color: white;
+    }
+
+    .exp-bloque {
+      margin-bottom: 80px;
+    }
+
+    .exp-bloque.oculto {
+      display: none;
+    }
+
+    .exp-hero {
+      position: relative;
+      height: 280px;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 40px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .exp-hero img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .exp-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75), transparent);
+      z-index: 1;
+    }
+
+    .exp-hero-texto {
+      position: relative;
+      z-index: 2;
+      color: white;
+      padding: 28px 32px;
+    }
+
+    .exp-hero-texto h2 {
+      font-size: 28px;
+      margin-bottom: 6px;
+    }
+
+    .exp-hero-texto p {
+      font-size: 15px;
+      opacity: 0.9;
+    }
+
+    .card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: white;
+    }
+
+    .card-tag.gastro { background: #c0392b; }
+    .card-tag.cultura { background: #0a3f5c; }
+
+    .festival-info {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 13px;
+      color: #888;
+    }
+
+    .festival-mes {
+      background: #e4002b;
+      color: white;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+
+    @media (max-width: 480px) {
+      .exp-hero { height: 200px; }
+      .exp-hero-texto h2 { font-size: 22px; }
+      .exp-hero-texto { padding: 20px; }
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias" aria-current="page">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO CON SLIDER -->
+    <section class="hero slider-hero" aria-labelledby="hero-titulo" aria-live="polite">
+
+      <div class="slide active" style="background-image: url('images/alpabzug.jpg')"></div>
+      <div class="slide" style="background-image: url('images/gastronomia.jpg')"></div>
+      <div class="slide" style="background-image: url('images/jazz.jpg')"></div>
+      <div class="slide" style="background-image: url('images/fetesdeGeneve.jpg')"></div>
+      <div class="slide" style="background-image: url('images/fasnacht.jpg')"></div>
+      <div class="slide" style="background-image: url('images/zürchergeschnetzeltes.jpg')"></div>
+
+      <button class="slider-btn prev" aria-label="Imagen anterior">&#8592;</button>
+      <button class="slider-btn next" aria-label="Imagen siguiente">&#8594;</button>
+
+      <div class="slider-dots" aria-hidden="true">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+
+      <div class="hero-content">
+        <h1 id="hero-titulo" data-i18n="exp_titulo">Experiencias Únicas</h1>
+        <p data-i18n="exp_desc">Vive la cultura y tradición suiza</p>
+      </div>
+
+    </section>
+
+    <!-- CONTENIDO CON FILTROS -->
+    <section class="destinos" aria-labelledby="exp-section-titulo">
+
+      <h2 id="exp-section-titulo" data-i18n="exp_titulo">Experiencias Únicas</h2>
+      <p data-i18n="exp_desc">Vive la cultura y tradición suiza</p>
+
+      <!-- FILTROS -->
+      <div class="filtros" role="group" aria-label="Filtrar experiencias por categoría">
+        <button class="filtro-btn activo" data-filtro="todos" data-i18n="filtro_todos">✨ Todas</button>
+        <button class="filtro-btn" data-filtro="gastronomia" data-i18n="filtro_gastronomia">🧀 Gastronomía</button>
+        <button class="filtro-btn" data-filtro="cultura" data-i18n="filtro_cultura">🏛 Cultura</button>
+      </div>
+
+      <!-- BLOQUE GASTRONOMÍA -->
+      <div class="exp-bloque" id="bloque-gastronomia" data-bloque="gastronomia">
+
+        <div class="exp-hero" aria-label="Sección Gastronomía Suiza">
+          <img
+            src="images/gastronomia.jpg"
+            alt="Vista cenital de dos personas sumergiendo papas en una cazuela de fondue de queso Gruyère derretido sobre una mesa con embutidos suizos y vino blanco"
+          >
+          <div class="exp-hero-texto">
+            <h2 data-i18n="gastronomia_titulo">Gastronomía Suiza</h2>
+            <p data-i18n="gastronomia_desc">Fondue, raclette y chocolate</p>
+          </div>
+        </div>
+
+        <ul class="cards" role="list">
+
+          <li>
+            <article class="card fade-in" aria-labelledby="fondue-titulo">
+              <img
+                src="images/gastronomia.jpg"
+                alt="Cazuela negra de fondue de queso Gruyère derretido con tenedores largos y papas cocidas, plato tradicional suizo compartido en mesa familiar"
+              >
+              <div class="card-body">
+                <span class="card-tag gastro">Gastronomía</span>
+                <h3 id="fondue-titulo" data-i18n="fondue_titulo">Fondue de Queso</h3>
+                <p data-i18n="fondue_desc">El plato más icónico de Suiza. Queso Gruyère y Emmental derretidos en cazuela de barro, acompañado de pan y papas.</p>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="raclette-titulo">
+              <img
+                src="images/raclettecheese.jpg"
+                alt="Chef raspando queso raclette del Valais derretido sobre una llama directa, dejando caer el queso fundido sobre papas cocidas en un plato blanco"
+              >
+              <div class="card-body">
+                <span class="card-tag gastro">Gastronomía</span>
+                <h3 id="raclette-titulo" data-i18n="raclette_titulo">Raclette</h3>
+                <p data-i18n="raclette_desc">Queso semiduro del cantón de Valais, derretido y servido sobre papas con pepinillos y cebollitas encurtidas. Un clásico alpino.</p>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="chocolate-titulo">
+              <img
+                src="images/chocolate.jpg"
+                alt="Vitrina de chocolatería suiza con filas de bombones artesanales de distintas variedades, pralinés y trufas de chocolate negro y con leche bajo iluminación cálida"
+              >
+              <div class="card-body">
+                <span class="card-tag gastro">Gastronomía</span>
+                <h3 id="chocolate-titulo" data-i18n="chocolate_titulo">Chocolate Suizo</h3>
+                <p data-i18n="chocolate_desc">Suiza es la cuna del chocolate con leche. Marcas como Lindt, Toblerone y Läderach son reconocidas en todo el mundo.</p>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="geschnetzeltes-titulo">
+              <img
+                src="images/zürchergeschnetzeltes.jpg"
+                alt="Plato de Zürcher Geschnetzeltes, tiras de ternera en salsa cremosa de champiñones servido en cazuela negra sobre tabla de madera, acompañado de rösti de papa dorado, especialidad gastronómica de Zúrich"
+              >
+              <div class="card-body">
+                <span class="card-tag gastro">Gastronomía</span>
+                <h3 id="geschnetzeltes-titulo" data-i18n="geschnetzeltes_titulo">Zürcher Geschnetzeltes</h3>
+                <p data-i18n="geschnetzeltes_desc">Tiras de ternera en cremosa salsa de champiñones y vino blanco, servidas con rösti de papa. El plato más representativo de la cocina zurichesa.</p>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- BLOQUE CULTURA -->
+      <div class="exp-bloque" id="bloque-cultura" data-bloque="cultura">
+
+        <div class="exp-hero" aria-label="Sección Cultura y Tradición">
+          <img
+            src="images/cultura.jpg"
+            alt="Estatua de piedra cubierta de musgo frente a una torre con reloj de un castillo de estilo neorrenacentista con balcones de madera tallada y frescos decorativos"
+          >
+          <div class="exp-hero-texto">
+            <h2 data-i18n="cultura_titulo">Cultura y Tradición</h2>
+            <p data-i18n="cultura_desc">Museos, festivales y patrimonio histórico</p>
+          </div>
+        </div>
+
+        <ul class="cards" role="list">
+
+          <li>
+            <article class="card fade-in" aria-labelledby="museos-titulo">
+              <img
+                src="images/cultura.jpg"
+                alt="Interior de un museo suizo con salas de exposición iluminadas que exhiben obras de arte y artefactos históricos en un edificio de arquitectura clásica"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Cultura</span>
+                <h3 id="museos-titulo" data-i18n="museos_titulo">Museos de Suiza</h3>
+                <p data-i18n="museos_desc">Suiza cuenta con más de 1000 museos. Destacan el Kunsthaus de Zúrich, el Museo Olímpico de Lausana y el Museo Nacional Suizo.</p>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="patrimonio-titulo">
+              <img
+                src="images/berna.jpg"
+                alt="Vista panorámica del casco histórico de Berna declarado Patrimonio de la Humanidad por la UNESCO con sus características arcadas cubiertas medievales y tejados de tejas rojas"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Cultura</span>
+                <h3 id="patrimonio-titulo" data-i18n="patrimonio_titulo">Patrimonio Histórico</h3>
+                <p data-i18n="patrimonio_desc">El casco histórico de Berna y el ferrocarril Rético son Patrimonio UNESCO. Suiza conserva castillos medievales, iglesias románicas y ciudades amuralladas.</p>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="fasnacht-titulo">
+              <img
+                src="images/fasnacht.jpg"
+                alt="Participante del carnaval Fasnacht de Basilea con elaborada máscara amarilla de payaso, peluca de fibras amarillas y linterna decorativa entre flores durante el desfile"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Festival</span>
+                <h3 id="fasnacht-titulo" data-i18n="fasnacht_titulo">Fasnacht — Basilea</h3>
+                <p data-i18n="fasnacht_desc">El carnaval más grande de Suiza. Tres días de desfiles, música de pífanos y tambores, y disfraces elaborados en las calles de Basilea.</p>
+                <div class="festival-info">
+                  <span class="festival-mes" data-i18n="fasnacht_mes">Febrero</span>
+                  <span>Basilea</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="jazz-titulo">
+              <img
+                src="images/jazz.jpg"
+                alt="Saxofonista tocando en escenario con humo y luces cálidas durante el Montreux Jazz Festival con cantante al fondo y ambiente íntimo de concierto en vivo"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Festival</span>
+                <h3 id="jazz-titulo" data-i18n="jazz_titulo">Montreux Jazz Festival</h3>
+                <p data-i18n="jazz_desc">Uno de los festivales de música más famosos del mundo. Artistas internacionales se presentan a orillas del Lago Leman cada verano.</p>
+                <div class="festival-info">
+                  <span class="festival-mes" data-i18n="jazz_mes">Julio</span>
+                  <span>Montreux</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="geneve-titulo">
+              <img
+                src="images/fetesdeGeneve.jpg"
+                alt="Espectáculo de fuegos artificiales multicolores sobre el lago Leman durante la Fête de Genève con luces reflejadas en el agua y barcos iluminados en la oscuridad de la noche"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Festival</span>
+                <h3 id="geneve-titulo" data-i18n="geneve_titulo">Fête de Genève</h3>
+                <p data-i18n="geneve_desc">El festival más grande de Ginebra con fuegos artificiales sobre el lago, conciertos gratuitos, espectáculos y actividades para toda la familia.</p>
+                <div class="festival-info">
+                  <span class="festival-mes" data-i18n="geneve_mes">Agosto</span>
+                  <span>Ginebra</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+          <li>
+            <article class="card fade-in" aria-labelledby="alpabzug-titulo">
+              <img
+                src="images/alpabzug.jpg"
+                alt="Vaca suiza decorada con corona de flores coloridas y campana tradicional al frente del desfile del Alpabzug con más vacas engalanadas siguiendo el camino alpino hacia los valles"
+              >
+              <div class="card-body">
+                <span class="card-tag cultura">Tradición</span>
+                <h3 id="alpabzug-titulo" data-i18n="alpabzug_titulo">Alpabzug</h3>
+                <p data-i18n="alpabzug_desc">Tradición centenaria del descenso del ganado alpino en otoño. Las vacas bajan decoradas con flores y campanas desde los pastos de montaña a los valles.</p>
+                <div class="festival-info">
+                  <span class="festival-mes" data-i18n="alpabzug_mes">Septiembre</span>
+                  <span>Alpes suizos</span>
+                </div>
+              </div>
+            </article>
+          </li>
+
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="cta-titulo">
+      <h2 id="cta-titulo" data-i18n="cta_titulo">¿Listo para tu Aventura Suiza?</h2>
+      <p data-i18n="cta_desc">Planifica tu viaje perfecto a través de los Alpes</p>
+      <a href="destinos.html" class="btn cta-btn" data-i18n="explorar" role="button">Explorar Destinos</a>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <section aria-labelledby="footer-contacto">
+        <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+        <address>
+          <p>info@suizaturismo.ch</p>
+          <p>+41 800 100 200</p>
+          <p>Zúrich, Suiza</p>
+        </address>
+      </section>
+
+      <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+          <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+          <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+          <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+        </ul>
+      </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <!-- MENÚ HAMBURGUESA -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+  <!-- SLIDER -->
+  <script>
+    (function() {
+      const slides = document.querySelectorAll('.slide');
+      const dots = document.querySelectorAll('.dot');
+      let current = 0;
+      let timer;
+
+      function goTo(index) {
+        slides[current].classList.remove('active');
+        dots[current].classList.remove('active');
+        current = (index + slides.length) % slides.length;
+        slides[current].classList.add('active');
+        dots[current].classList.add('active');
+      }
+
+      function next() { goTo(current + 1); }
+      function prev() { goTo(current - 1); }
+      function startAuto() { timer = setInterval(next, 4000); }
+      function resetAuto() { clearInterval(timer); startAuto(); }
+
+      document.querySelector('.next').addEventListener('click', () => { next(); resetAuto(); });
+      document.querySelector('.prev').addEventListener('click', () => { prev(); resetAuto(); });
+
+      dots.forEach((dot, i) => {
+        dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+      });
+
+      document.querySelector('.slider-hero').addEventListener('mouseenter', () => clearInterval(timer));
+      document.querySelector('.slider-hero').addEventListener('mouseleave', startAuto);
+
+      startAuto();
+    })();
+  </script>
+
+  <!-- FILTROS -->
+  <script>
+    (function () {
+      const botones = document.querySelectorAll('.filtro-btn');
+      const bloques = document.querySelectorAll('.exp-bloque');
+      botones.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filtro = btn.getAttribute('data-filtro');
+          botones.forEach(b => b.classList.remove('activo'));
+          btn.classList.add('activo');
+          bloques.forEach(function (bloque) {
+            if (filtro === 'todos' || bloque.getAttribute('data-bloque') === filtro) {
+              bloque.classList.remove('oculto');
+            } else {
+              bloque.classList.add('oculto');
+            }
+          });
+        });
+      });
+    })();
+  </script>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">↑</button>
+
+  <script>
+    (function () {
+      const btnTop = document.getElementById('btn-top');
+      window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        if (scrolled > 300) {
+          btnTop.classList.add('visible');
+        } else {
+          btnTop.classList.remove('visible');
+        }
+      });
+      btnTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  <!-- FADE IN SCROLL -->
+  <script>
+    (function () {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+  <!-- NAVBAR SCROLL -->
+  <script>
+    (function () {
+      const navbarEl = document.querySelector('.navbar');
+      window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        if (scrolled > 10) {
+          navbarEl.classList.add('scrolled');
+        } else {
+          navbarEl.classList.remove('scrolled');
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>

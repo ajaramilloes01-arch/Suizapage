@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre los lagos más hermosos de Suiza: Lago de Ginebra, Lago de Lucerna, Lago Brienz y Lago Thun.">
+  <title>Lagos Cristalinos — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="index.html#destinos" data-i18n="destinos">Destinos</a></li>
+        <li><a href="index.html#experiencias" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO LAGOS -->
+    <section class="hero hero-lagos" aria-labelledby="hero-titulo">
+      <div class="hero-content">
+        <h1 id="hero-titulo" data-i18n="lagos_page_title">
+          Lagos Cristalinos de Suiza
+        </h1>
+        <p data-i18n="lagos_page_desc">
+          Aguas turquesas rodeadas de montañas y paisajes únicos
+        </p>
+      </div>
+    </section>
+
+    <!-- LAGOS DESTACADOS -->
+    <section class="destinos" aria-labelledby="lagos-section-titulo">
+
+      <h2 id="lagos-section-titulo" data-i18n="lagos_section_title">
+        Lagos Destacados
+      </h2>
+
+      <div class="destinos-grid">
+
+        <!-- LAGO DE GINEBRA -->
+        <article class="destino-card fade-in" aria-labelledby="ginebra-titulo">
+          
+          <img
+            src="images/ginebra.jpg"
+            alt="Lago Oeschinen de color azul turquesa intenso enclavado entre paredes rocosas de los Alpes berneses, visto desde una cabaña de madera en la ladera rodeada de pinos y prados alpinos"
+          >
+          <div class="destino-info">
+            <h3 id="ginebra-titulo" data-i18n="ginebra_lago_title">Lago de Ginebra</h3>
+            <p data-i18n="ginebra_lago_desc">Uno de los lagos más grandes de Europa occidental.</p>
+            <ul class="destino-datos" aria-label="Información turística del Lago de Ginebra">
+              <li data-i18n="ginebra_lago_highlight">⭐ Destacado: vistas de los Alpes y viñedos</li>
+              <li data-i18n="ginebra_lago_time">⏱ Tiempo recomendado: 1 – 2 días</li>
+              <li data-i18n="ginebra_lago_activity">⛵ Actividad: paseos en barco</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- LAGO DE LUCERNA -->
+        <article class="destino-card fade-in" aria-labelledby="lucerna-lago-titulo">
+          
+          <img
+            src="images/lucernalake.jpg"
+            alt="Puente Kapellbrücke de madera del siglo XIV con su torre octagonal de piedra sobre el río Reuss en Lucerna, con cisnes blancos en el agua y edificios históricos del casco antiguo al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="lucerna-lago-titulo" data-i18n="lucerna_lago_title">Lago de Lucerna</h3>
+            <p data-i18n="lucerna_lago_desc">Lago rodeado por montañas y pueblos encantadores.</p>
+            <ul class="destino-datos" aria-label="Información turística del Lago de Lucerna">
+              <li data-i18n="lucerna_lago_highlight">⭐ Destacado: vistas del Monte Pilatus</li>
+              <li data-i18n="lucerna_lago_time">⏱ Tiempo recomendado: 1 día</li>
+              <li data-i18n="lucerna_lago_activity">🚤 Actividad: cruceros panorámicos</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- LAGO BRIENZ -->
+        <article class="destino-card fade-in" aria-labelledby="brienz-titulo">
+          
+          <img
+            src="images/brienz.jpg"
+            alt="Vista aérea del pequeño pueblo de Iseltwald asomándose sobre las aguas turquesas del Lago Brienz, rodeado de bosques alpinos otoñales y colinas cubiertas de niebla"
+          >
+          <div class="destino-info">
+            <h3 id="brienz-titulo" data-i18n="brienz_title">Lago Brienz</h3>
+            <p data-i18n="brienz_desc">Lago alpino famoso por su color turquesa intenso.</p>
+            <ul class="destino-datos" aria-label="Información turística del Lago Brienz">
+              <li data-i18n="brienz_highlight">⭐ Destacado: cascadas Giessbach</li>
+              <li data-i18n="brienz_time">⏱ Tiempo recomendado: 1 día</li>
+              <li data-i18n="brienz_activity">🏞 Actividad: kayak y senderismo</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- LAGO THUN -->
+        <article class="destino-card fade-in" aria-labelledby="thun-titulo">
+          
+          <img
+            src="images/thun.jpg"
+            alt="Vista panorámica del pueblo de Spiez a orillas del Lago Thun con el castillo medieval de Spiez entre viñedos en terrazas, veleros en el puerto y los Alpes berneses cubiertos de nubes al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="thun-titulo" data-i18n="thun_title">Lago Thun</h3>
+            <p data-i18n="thun_desc">Lago alpino rodeado de castillos medievales.</p>
+            <ul class="destino-datos" aria-label="Información turística del Lago Thun">
+              <li data-i18n="thun_highlight">⭐ Destacado: castillo de Oberhofen</li>
+              <li data-i18n="thun_time">⏱ Tiempo recomendado: 1 día</li>
+              <li data-i18n="thun_activity">🚴 Actividad: ciclismo y navegación</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <section aria-labelledby="footer-contacto">
+        <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+        <address>
+            <p>info@suizaturismo.ch</p>
+            <p>+41 800 100 200</p>
+            <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+      <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+  ↑
+</button>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- FADE IN SCROLL -->
+<script>
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+
+<!-- NAVBAR SCROLL -->
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

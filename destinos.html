@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora todos los destinos de Suiza: Alpes, ciudades históricas, lagos cristalinos y trenes panorámicos.">
+  <title>Destinos — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    /* FILTROS */
+    .filtros {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin: 32px 0 40px;
+    }
+
+    .filtro-btn {
+      padding: 10px 24px;
+      border-radius: 50px;
+      border: 2px solid #e4002b;
+      background: transparent;
+      color: #e4002b;
+      font-family: 'Poppins', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+
+    .filtro-btn:hover {
+      background: #e4002b;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .filtro-btn.activo {
+      background: #e4002b;
+      color: white;
+    }
+
+    /* Cards ocultas al filtrar */
+    .card-item {
+      transition: opacity 0.3s, transform 0.3s;
+    }
+
+    .card-item.oculta {
+      display: none;
+    }
+
+    /* Contador de resultados */
+    .resultados {
+      text-align: center;
+      color: #888;
+      font-size: 14px;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos" aria-current="page">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO -->
+        <!-- HERO CON SLIDER -->
+<section class="hero slider-hero" aria-labelledby="hero-titulo" aria-live="polite">
+
+  <div class="slide active" style="background-image: url('images/suizacalma.jpg')"></div>
+  <div class="slide" style="background-image: url('images/alpes.jpg')"></div>
+  <div class="slide" style="background-image: url('images/ciudades.jpg')"></div>
+  <div class="slide" style="background-image: url('images/trenes.jpg')"></div>
+  <div class="slide" style="background-image: url('images/berna.jpg')"></div>
+  <div class="slide" style="background-image: url('images/bernina.jpg')"></div>
+  <div class="slide" style="background-image: url('images/brienz.jpg')"></div>
+  <div class="slide" style="background-image: url('images/zurich.jpg')"></div>
+  <div class="slide" style="background-image: url('images/zermatt.jpg')"></div>
+  <div class="slide" style="background-image: url('images/schaffhausen.jpg')"></div>
+  <div class="slide" style="background-image: url('images/matterhorn.jpg')"></div>
+  <div class="slide" style="background-image: url('images/gotthard.jpg')"></div>
+  <div class="slide" style="background-image: url('images/golden.jpg')"></div>
+
+  <button class="slider-btn prev" aria-label="Imagen anterior">&#8592;</button>
+  <button class="slider-btn next" aria-label="Imagen siguiente">&#8594;</button>
+
+  <div class="slider-dots" aria-hidden="true">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <div class="hero-content">
+    <h1 id="hero-titulo" data-i18n="destinos_titulo">Destinos Imperdibles</h1>
+    <p data-i18n="destinos_desc">Explora los lugares más emblemáticos de Suiza</p>
+  </div>
+
+</section>
+
+    <!-- SECCIÓN DESTINOS CON FILTROS -->
+    <section class="destinos" aria-labelledby="destinos-section-titulo">
+
+      <h2 id="destinos-section-titulo" data-i18n="destinos_titulo">Destinos Imperdibles</h2>
+      <p data-i18n="destinos_desc">Explora los lugares más emblemáticos de Suiza</p>
+
+      <!-- BOTONES DE FILTRO -->
+      <div class="filtros" role="group" aria-label="Filtrar destinos por categoría">
+        <button class="filtro-btn activo" data-filtro="todos" data-i18n="filtro_todos">🗺 Todos</button>
+        <button class="filtro-btn" data-filtro="alpes" data-i18n="filtro_alpes">🏔 Alpes</button>
+        <button class="filtro-btn" data-filtro="ciudades" data-i18n="filtro_ciudades">🏙 Ciudades</button>
+        <button class="filtro-btn" data-filtro="lagos" data-i18n="filtro_lagos">💧 Lagos</button>
+        <button class="filtro-btn" data-filtro="trenes" data-i18n="filtro_trenes">🚆 Trenes</button>
+      </div>
+
+      <!-- CONTADOR -->
+      <p class="resultados" id="contador" aria-live="polite"></p>
+
+      <!-- GRID DE TODAS LAS CARDS -->
+      <ul class="cards" role="list" id="cards-grid">
+
+        <!-- ALPES -->
+        <li class="card-item" data-categoria="alpes">
+          <a href="alpes.html" class="card fade-in" aria-label="Ver destino: Los Alpes Suizos">
+            <img src="images/alpes.jpg" alt="Estación de montaña con restaurante panorámico en la cima del Schilthorn a 2970 metros, rodeada de cumbres nevadas de los Alpes berneses bajo un espectacular amanecer con cielo naranja y azul">
+            <div class="card-body">
+              <span class="card-tag">Alpes</span>
+              <h3 data-i18n="alpes_titulo">Los Alpes Suizos</h3>
+              <p data-i18n="alpes_desc">Montañas majestuosas y paisajes de ensueño</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="alpes">
+          <a href="alpes.html#zermatt" class="card fade-in" aria-label="Ver destino: Zermatt">
+            <img src="images/zermatt.jpg" alt="Vista nocturna del pueblo alpino de Zermatt cubierto de nieve al amanecer, con cientos de chalets y hoteles iluminados y la silueta piramidal del Matterhorn al fondo">
+            <div class="card-body">
+              <span class="card-tag">Alpes</span>
+              <h3 data-i18n="zermatt_title">Zermatt</h3>
+              <p data-i18n="zermatt_desc">Pueblo alpino famoso por el Matterhorn y el esquí.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="alpes">
+          <a href="alpes.html#matterhorn" class="card fade-in" aria-label="Ver destino: Matterhorn">
+            <img src="images/matterhorn.jpg" alt="Reflejo perfecto del Matterhorn en el lago Riffelsee cerca de Zermatt, con la montaña cubierta de nieve duplicada simétricamente en las aguas calmas bajo cielo azul">
+            <div class="card-body">
+              <span class="card-tag">Alpes</span>
+              <h3 data-i18n="matterhorn_title">Matterhorn</h3>
+              <p data-i18n="matterhorn_desc">Una de las montañas más icónicas del mundo.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="alpes">
+          <a href="alpes.html#jungfrau" class="card fade-in" aria-label="Ver destino: Región Jungfrau">
+            <img src="images/jungfrau.jpg" alt="Observatorio Sphinx con su cúpula metálica plateada en la cima del Jungfraujoch a 3571 metros, construido sobre una roca escarpada cubierta de nieve">
+            <div class="card-body">
+              <span class="card-tag">Alpes</span>
+              <h3 data-i18n="jungfrau_title">Región Jungfrau</h3>
+              <p data-i18n="jungfrau_desc">Glaciares, trenes de montaña y vistas espectaculares.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="alpes">
+          <a href="alpes.html#interlaken" class="card fade-in" aria-label="Ver destino: Interlaken">
+            <img src="images/interlaken.jpg" alt="Parapentista en tándem sobrevolando el centro de Interlaken con su paracaídas amarillo y rojo, con hoteles Belle Époque y montañas alpinas de fondo">
+            <div class="card-body">
+              <span class="card-tag">Alpes</span>
+              <h3 data-i18n="interlaken_title">Interlaken</h3>
+              <p data-i18n="interlaken_desc">Capital suiza de los deportes de aventura.</p>
+            </div>
+          </a>
+        </li>
+
+        <!-- CIUDADES -->
+        <li class="card-item" data-categoria="ciudades">
+          <a href="ciudades.html" class="card fade-in" aria-label="Ver destino: Ciudades Históricas">
+            <img src="images/ciudades.jpg" alt="Iglesia de los Jesuitas de Lucerna con sus torres barrocas de cúpula verde reflejadas en el río Reuss al atardecer con el cielo teñido de rojos y naranjas">
+            <div class="card-body">
+              <span class="card-tag">Ciudades</span>
+              <h3 data-i18n="ciudades_titulo">Ciudades Históricas</h3>
+              <p data-i18n="ciudades_desc">Zúrich, Lucerna, Berna y Ginebra</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="ciudades">
+          <a href="ciudades.html#lucerna" class="card fade-in" aria-label="Ver destino: Lucerna">
+            <img src="images/lucerna.jpg" alt="Puente cubierto Kapellbrücke del siglo XIV sobre el río Reuss en Lucerna con la Torre del Agua octagonal y flores decorando la estructura de madera">
+            <div class="card-body">
+              <span class="card-tag">Ciudades</span>
+              <h3 data-i18n="lucerna_title">Lucerna</h3>
+              <p data-i18n="lucerna_desc">Ciudad pintoresca a orillas del lago con arquitectura medieval.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="ciudades">
+          <a href="ciudades.html#zurich" class="card fade-in" aria-label="Ver destino: Zúrich">
+            <img src="images/zurich.jpg" alt="Puente Münsterbrücke de arcos de piedra sobre el río Limmat en Zúrich al atardecer con la torre con reloj de la iglesia Fraumünster al fondo">
+            <div class="card-body">
+              <span class="card-tag">Ciudades</span>
+              <h3 data-i18n="zurich_title">Zúrich</h3>
+              <p data-i18n="zurich_desc">La ciudad más grande de Suiza y su centro financiero.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="ciudades">
+          <a href="ciudades.html#berna" class="card fade-in" aria-label="Ver destino: Berna">
+            <img src="images/berna.jpg" alt="Vista panorámica del casco histórico de Berna desde las orillas del río Aare de color turquesa con casas coloridas de tejados naranjas y la aguja gótica de la catedral al fondo">
+            <div class="card-body">
+              <span class="card-tag">Ciudades</span>
+              <h3 data-i18n="berna_title">Berna</h3>
+              <p data-i18n="berna_desc">Capital de Suiza con centro histórico medieval.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="ciudades">
+          <a href="ciudades.html#schaffhausen" class="card fade-in" aria-label="Ver destino: Schaffhausen">
+            <img src="images/schaffhausen.jpg" alt="Fortaleza cilíndrica Munot del siglo XVI en Schaffhausen rodeada de viñedos con vistas al río Rin y al casco antiguo de fachadas decoradas con frescos medievales">
+            <div class="card-body">
+              <span class="card-tag">Ciudades</span>
+              <h3 data-i18n="schaffhausen_title">Schaffhausen</h3>
+              <p data-i18n="schaffhausen_desc">Ciudad histórica cerca de las Cataratas del Rin.</p>
+            </div>
+          </a>
+        </li>
+
+        <!-- LAGOS -->
+        <li class="card-item" data-categoria="lagos">
+          <a href="lagos.html" class="card fade-in" aria-label="Ver destino: Lagos Cristalinos">
+            <img src="images/lago.jpg" alt="Embarcadero de madera oscura adentrándose en las aguas quietas y cristalinas de un lago alpino con un castillo medieval al fondo y montañas nevadas reflejadas en la superficie">
+            <div class="card-body">
+              <span class="card-tag">Lagos</span>
+              <h3 data-i18n="lagos_titulo">Lagos Cristalinos</h3>
+              <p data-i18n="lagos_desc">Aguas turquesas rodeadas de naturaleza</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="lagos">
+          <a href="lagos.html#ginebra" class="card fade-in" aria-label="Ver destino: Lago de Ginebra">
+            <img src="images/ginebra.jpg" alt="Lago Oeschinen de color azul turquesa intenso enclavado entre paredes rocosas de los Alpes berneses visto desde una cabaña de madera en la ladera rodeada de pinos">
+            <div class="card-body">
+              <span class="card-tag">Lagos</span>
+              <h3 data-i18n="ginebra_lago_title">Lago de Ginebra</h3>
+              <p data-i18n="ginebra_lago_desc">Uno de los lagos más grandes de Europa occidental.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="lagos">
+          <a href="lagos.html#lucernalago" class="card fade-in" aria-label="Ver destino: Lago de Lucerna">
+            <img src="images/lucernalake.jpg" alt="Puente Kapellbrücke de madera del siglo XIV con su torre octagonal de piedra sobre el río Reuss en Lucerna con cisnes blancos en el agua">
+            <div class="card-body">
+              <span class="card-tag">Lagos</span>
+              <h3 data-i18n="lucerna_lago_title">Lago de Lucerna</h3>
+              <p data-i18n="lucerna_lago_desc">Lago rodeado por montañas y pueblos encantadores.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="lagos">
+          <a href="lagos.html#brienz" class="card fade-in" aria-label="Ver destino: Lago Brienz">
+            <img src="images/brienz.jpg" alt="Vista aérea del pequeño pueblo de Iseltwald asomándose sobre las aguas turquesas del Lago Brienz rodeado de bosques alpinos otoñales y colinas cubiertas de niebla">
+            <div class="card-body">
+              <span class="card-tag">Lagos</span>
+              <h3 data-i18n="brienz_title">Lago Brienz</h3>
+              <p data-i18n="brienz_desc">Lago alpino famoso por su color turquesa intenso.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="lagos">
+          <a href="lagos.html#thun" class="card fade-in" aria-label="Ver destino: Lago Thun">
+            <img src="images/thun.jpg" alt="Vista panorámica del pueblo de Spiez a orillas del Lago Thun con el castillo medieval entre viñedos en terrazas y los Alpes berneses al fondo">
+            <div class="card-body">
+              <span class="card-tag">Lagos</span>
+              <h3 data-i18n="thun_title">Lago Thun</h3>
+              <p data-i18n="thun_desc">Lago alpino rodeado de castillos medievales.</p>
+            </div>
+          </a>
+        </li>
+
+        <!-- TRENES -->
+        <li class="card-item" data-categoria="trenes">
+          <a href="trenes.html" class="card fade-in" aria-label="Ver destino: Trenes Panorámicos">
+            <img src="images/trenes.jpg" alt="Tren de cremallera de vapor BRB rojo con vagones abiertos en la estación de cumbre del Brienzer Rothorn con vista aérea espectacular del Lago Brienz turquesa entre montañas">
+            <div class="card-body">
+              <span class="card-tag">Trenes</span>
+              <h3 data-i18n="trenes_titulo">Trenes Panorámicos</h3>
+              <p data-i18n="trenes_desc">Viajes inolvidables por los Alpes</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="trenes">
+          <a href="trenes.html#glacier" class="card fade-in" aria-label="Ver destino: Glacier Express">
+            <img src="images/glacier.jpg" alt="Tren rojo de la Rhaetische Bahn avanzando por un paisaje invernal completamente cubierto de nieve en el paso de la Bernina con montañas alpinas nevadas al fondo">
+            <div class="card-body">
+              <span class="card-tag">Trenes</span>
+              <h3 data-i18n="glacier_title">Glacier Express</h3>
+              <p data-i18n="glacier_desc">Uno de los trenes panorámicos más famosos del mundo.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="trenes">
+          <a href="trenes.html#bernina" class="card fade-in" aria-label="Ver destino: Bernina Express">
+            <img src="images/bernina.jpg" alt="Tren rojo del Bernina Express recorriendo una curva en las laderas alpinas entre bosques de coníferas y pinos con picos nevados en el horizonte">
+            <div class="card-body">
+              <span class="card-tag">Trenes</span>
+              <h3 data-i18n="bernina_title">Bernina Express</h3>
+              <p data-i18n="bernina_desc">Ruta espectacular entre Suiza e Italia.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="trenes">
+          <a href="trenes.html#golden" class="card fade-in" aria-label="Ver destino: GoldenPass Line">
+            <img src="images/golden.jpg" alt="Tren moderno azul verdoso del GoldenPass Express pasando frente a un pueblo suizo con iglesia de campanario puntiagudo rodeado de praderas verdes y montañas boscosas">
+            <div class="card-body">
+              <span class="card-tag">Trenes</span>
+              <h3 data-i18n="golden_title">GoldenPass Line</h3>
+              <p data-i18n="golden_desc">Ruta panorámica entre Lucerna y Montreux.</p>
+            </div>
+          </a>
+        </li>
+
+        <li class="card-item" data-categoria="trenes">
+          <a href="trenes.html#gotthard" class="card fade-in" aria-label="Ver destino: Gotthard Panorama Express">
+            <img src="images/gotthard.jpg" alt="Tren de alta velocidad SBB ICN blanco y rojo en la estación alpina de Göschenen con la imponente montaña del Gotardo cubierta parcialmente de nieve al fondo">
+            <div class="card-body">
+              <span class="card-tag">Trenes</span>
+              <h3 data-i18n="gotthard_title">Gotthard Panorama Express</h3>
+              <p data-i18n="gotthard_desc">Combina viaje en tren y barco panorámico.</p>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" aria-labelledby="cta-titulo">
+      <h2 id="cta-titulo" data-i18n="cta_titulo">¿Listo para tu Aventura Suiza?</h2>
+      <p data-i18n="cta_desc">Planifica tu viaje perfecto a través de los Alpes</p>
+      <a href="experiencias.html" class="btn cta-btn" data-i18n="ver_exp" role="button">Ver Experiencias</a>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <section aria-labelledby="footer-contacto">
+        <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+        <address>
+            <p>info@suizaturismo.ch</p>
+            <p>+41 800 100 200</p>
+            <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+      <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+            <li><span aria-hidden="true">Facebook</span></li>
+            <li><span aria-hidden="true">Instagram</span></li>
+            <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <!-- MENÚ HAMBURGUESA -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+  <!-- FILTROS -->
+  <script>
+    (function () {
+      const botones = document.querySelectorAll('.filtro-btn');
+      const items = document.querySelectorAll('.card-item');
+      const contador = document.getElementById('contador');
+
+      function actualizarContador() {
+        const visibles = document.querySelectorAll('.card-item:not(.oculta)').length;
+        contador.textContent = visibles + ' destino' + (visibles !== 1 ? 's' : '') + ' encontrado' + (visibles !== 1 ? 's' : '');
+      }
+
+      botones.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          const filtro = btn.getAttribute('data-filtro');
+
+          // Actualizar botón activo
+          botones.forEach(b => b.classList.remove('activo'));
+          btn.classList.add('activo');
+
+          // Mostrar u ocultar cards
+          items.forEach(function (item) {
+            if (filtro === 'todos' || item.getAttribute('data-categoria') === filtro) {
+              item.classList.remove('oculta');
+            } else {
+              item.classList.add('oculta');
+            }
+          });
+
+          actualizarContador();
+        });
+      });
+
+      // Contador inicial
+      actualizarContador();
+    })();
+  </script>
+
+  <!-- BOTÓN VOLVER ARRIBA -->
+  <button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">↑</button>
+
+  <script>
+    (function () {
+      const btnTop = document.getElementById('btn-top');
+      window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        if (scrolled > 300) {
+          btnTop.classList.add('visible');
+        } else {
+          btnTop.classList.remove('visible');
+        }
+      });
+      btnTop.addEventListener('click', function () {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    })();
+  </script>
+
+  <!-- FADE IN SCROLL -->
+  <script>
+    (function () {
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1 });
+      document.querySelectorAll('.fade-in').forEach(function (el) {
+        observer.observe(el);
+      });
+    })();
+  </script>
+
+  <!-- NAVBAR SCROLL -->
+  <script>
+    (function () {
+      const navbarEl = document.querySelector('.navbar');
+      window.addEventListener('scroll', function () {
+        const scrolled = window.scrollY || document.documentElement.scrollTop;
+        if (scrolled > 10) {
+          navbarEl.classList.add('scrolled');
+        } else {
+          navbarEl.classList.remove('scrolled');
+        }
+      });
+    })();
+  </script>
+
+<!-- SLIDER -->
+<script>
+  (function() {
+    const slides = document.querySelectorAll('.slide');
+    const dots = document.querySelectorAll('.dot');
+    let current = 0;
+    let timer;
+
+    function goTo(index) {
+      slides[current].classList.remove('active');
+      dots[current].classList.remove('active');
+      current = (index + slides.length) % slides.length;
+      slides[current].classList.add('active');
+      dots[current].classList.add('active');
+    }
+
+    function next() { goTo(current + 1); }
+    function prev() { goTo(current - 1); }
+
+    function startAuto() { timer = setInterval(next, 4000); }
+    function resetAuto() { clearInterval(timer); startAuto(); }
+
+    document.querySelector('.next').addEventListener('click', () => { next(); resetAuto(); });
+    document.querySelector('.prev').addEventListener('click', () => { prev(); resetAuto(); });
+
+    dots.forEach((dot, i) => {
+      dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+    });
+
+    document.querySelector('.slider-hero').addEventListener('mouseenter', () => clearInterval(timer));
+    document.querySelector('.slider-hero').addEventListener('mouseleave', startAuto);
+
+    startAuto();
+  })();
+</script>
+
+</body>
+</html>

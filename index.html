@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre los mejores destinos turísticos de Suiza: Alpes, ciudades históricas, lagos cristalinos y trenes panorámicos.">
+  <title>Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- Región live para anuncios de accesibilidad -->
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <!-- Botón hamburguesa para móvil -->
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio" aria-current="page">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO CON SLIDER -->
+<section class="hero slider-hero" aria-labelledby="hero-titulo" aria-live="polite">
+
+  <div class="slide active" style="background-image: url('images/suiza.jpg')"></div>
+  <div class="slide" style="background-image: url('images/alpes.jpg')"></div>
+  <div class="slide" style="background-image: url('images/lago.jpg')"></div>
+  <div class="slide" style="background-image: url('images/ciudades.jpg')"></div>
+
+  <!-- Flechas -->
+  <button class="slider-btn prev" aria-label="Imagen anterior">&#8592;</button>
+  <button class="slider-btn next" aria-label="Imagen siguiente">&#8594;</button>
+
+  <!-- Indicadores -->
+  <div class="slider-dots" aria-hidden="true">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+
+  <div class="hero-content">
+    <h1 id="hero-titulo" data-i18n="hero_title">Descubre la Magia de Suiza</h1>
+    <p data-i18n="hero_text">Paisajes alpinos, ciudades encantadoras y experiencias inolvidables</p>
+    <div class="hero-buttons">
+      <a href="destinos.html" class="btn primary" data-i18n="explorar">Explorar Destinos</a>
+      <a href="experiencias.html" class="btn secondary" data-i18n="ver_exp">Ver Experiencias</a>
+    </div>
+  </div>
+
+</section>
+
+
+    <!-- SECCIÓN DESTINOS PRINCIPALES -->
+    <section class="destinos" id="destinos" aria-labelledby="destinos-titulo">
+
+      <h2 id="destinos-titulo" data-i18n="destinos_titulo">Destinos Imperdibles</h2>
+      <p data-i18n="destinos_desc">Explora los lugares más emblemáticos de Suiza</p>
+
+      <!-- Lista de tarjetas de destinos -->
+      <ul class="cards" role="list">
+
+        <li>
+          <a href="alpes.html" class="card fade-in" aria-label="Ver destino: Los Alpes Suizos">
+            
+            <img
+              src="images/alpes.jpg"
+              alt="Estación de montaña con restaurante panorámico en la cima del Schilthorn a 2970 metros, rodeada de cumbres nevadas de los Alpes berneses bajo un espectacular amanecer con cielo naranja y azul"
+            >
+            <div class="card-body">
+              <h3 data-i18n="alpes_titulo">Los Alpes Suizos</h3>
+              <p data-i18n="alpes_desc">Montañas majestuosas y paisajes de ensueño</p>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="ciudades.html" class="card fade-in" aria-label="Ver destino: Ciudades Históricas">
+            
+            <img
+              src="images/ciudades.jpg"
+              alt="Iglesia de los Jesuitas de Lucerna con sus torres barrocas de cúpula verde reflejadas en el río Reuss al atardecer, con el cielo teñido de tonos rojos y naranjas típicos de un ocaso invernal"
+            >
+            <div class="card-body">
+              <h3 data-i18n="ciudades_titulo">Ciudades Históricas</h3>
+              <p data-i18n="ciudades_desc">Zúrich, Lucerna, Berna y Ginebra</p>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="lagos.html" class="card fade-in" aria-label="Ver destino: Lagos Cristalinos">
+            
+            <img
+              src="images/lago.jpg"
+              alt="Embarcadero de madera oscura adentrándose en las aguas quietas y cristalinas de un lago alpino, con un castillo medieval al fondo a la derecha y montañas nevadas reflejadas en la superficie"
+            >
+            <div class="card-body">
+              <h3 data-i18n="lagos_titulo">Lagos Cristalinos</h3>
+              <p data-i18n="lagos_desc">Aguas turquesas rodeadas de naturaleza</p>
+            </div>
+          </a>
+        </li>
+
+        <li>
+          <a href="trenes.html" class="card fade-in" aria-label="Ver destino: Trenes Panorámicos">
+            
+            <img
+              src="images/trenes.jpg"
+              alt="Tren de cremallera de vapor BRB rojo con vagones abiertos en la estación de cumbre del Brienzer Rothorn, con turistas a su alrededor y una vista aérea espectacular del Lago Brienz de color turquesa intenso entre montañas verdes"
+            >
+            <div class="card-body">
+              <h3 data-i18n="trenes_titulo">Trenes Panorámicos</h3>
+              <p data-i18n="trenes_desc">Viajes inolvidables por los Alpes</p>
+            </div>
+          </a>
+        </li>
+
+      </ul>
+
+    </section>
+
+
+    <!-- SECCIÓN EXPERIENCIAS CULTURALES -->
+    <section class="experiencias" id="experiencias" aria-labelledby="exp-titulo">
+
+      <h2 id="exp-titulo" data-i18n="exp_titulo">Experiencias Únicas</h2>
+      <p data-i18n="exp_desc">Vive la cultura y tradición suiza</p>
+
+      <div class="experiencias-grid">
+
+        <article class="experiencia-card" aria-label="Experiencia: Gastronomía Suiza">
+          
+          <img
+            src="images/gastronomia.jpg"
+            alt="Vista cenital de dos personas sumergiendo papas en una cazuela de fondue de queso Gruyère derretido, sobre una mesa con embutidos suizos, vino blanco y ensalada fresca"
+          >
+          <div class="overlay">
+            <h3 data-i18n="gastronomia_titulo">Gastronomía Suiza</h3>
+            <p data-i18n="gastronomia_desc">Fondue, raclette y chocolate</p>
+          </div>
+        </article>
+
+        <article class="experiencia-card" aria-label="Experiencia: Cultura y Tradición">
+          
+          <img
+            src="images/cultura.jpg"
+            alt="Estatua de piedra cubierta de musgo en primer plano frente a una torre con reloj de un castillo de estilo neorrenacentista, con balcones de madera tallada y frescos decorativos en la fachada"
+          >
+          <div class="overlay">
+            <h3 data-i18n="cultura_titulo">Cultura y Tradición</h3>
+            <p data-i18n="cultura_desc">Museos, festivales y patrimonio histórico</p>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+
+    <!-- SECCIÓN LLAMADA A LA ACCIÓN (CTA) -->
+    <section class="cta" aria-labelledby="cta-titulo">
+
+      <h2 id="cta-titulo" data-i18n="cta_titulo">¿Listo para tu Aventura Suiza?</h2>
+      <p data-i18n="cta_desc">Planifica tu viaje perfecto a través de los Alpes</p>
+      <a href="destinos.html" class="btn cta-btn" data-i18n="cta_btn" role="button">
+        Comienza a Planificar
+      </a>
+
+    </section>
+
+  </main>
+
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+
+    <div class="footer-container">
+
+      <!-- Información de contacto -->
+    <section aria-labelledby="footer-contacto">
+      <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+      <address>
+        <p>info@suizaturismo.ch</p>
+        <p>+41 800 100 200</p>
+        <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+      <!-- Enlaces rápidos de navegación -->
+      <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <!-- Redes sociales -->
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <!-- MENÚ HAMBURGUESA -->
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute(
+        'aria-label',
+        isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación'
+      );
+    });
+
+    // Cerrar menú al hacer clic en un enlace
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+
+    // Cerrar menú al presionar Escape
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+  ↑
+</button>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- SLIDER -->
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const dots = document.querySelectorAll('.dot');
+  let current = 0;
+  let timer;
+
+  function goTo(index) {
+    slides[current].classList.remove('active');
+    dots[current].classList.remove('active');
+    current = (index + slides.length) % slides.length;
+    slides[current].classList.add('active');
+    dots[current].classList.add('active');
+  }
+
+  function next() { goTo(current + 1); }
+  function prev() { goTo(current - 1); }
+
+  function startAuto() {
+    timer = setInterval(next, 4000);
+  }
+
+  function resetAuto() {
+    clearInterval(timer);
+    startAuto();
+  }
+
+  document.querySelector('.next').addEventListener('click', () => { next(); resetAuto(); });
+  document.querySelector('.prev').addEventListener('click', () => { prev(); resetAuto(); });
+
+  dots.forEach((dot, i) => {
+    dot.addEventListener('click', () => { goTo(i); resetAuto(); });
+  });
+
+  // Pausar al hover
+  document.querySelector('.slider-hero').addEventListener('mouseenter', () => clearInterval(timer));
+  document.querySelector('.slider-hero').addEventListener('mouseleave', startAuto);
+
+  startAuto();
+</script>
+
+<!-- FADE IN SCROLL -->
+<script>
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+
+<!-- NAVBAR SCROLL -->
+<script>
+  (function() {
+    const navbarEl = document.querySelector('.navbar');
+
+    window.addEventListener('scroll', function () {
+      const scrolled = window.scrollY || document.documentElement.scrollTop;
+      if (scrolled > 10) {
+        navbarEl.classList.add('scrolled');
+      } else {
+        navbarEl.classList.remove('scrolled');
+      }
+    });
+  })();
+</script>
+
+<!-- POPUP BIENVENIDA -->
+<div id="popup-overlay" aria-hidden="true"></div>
+
+<div id="popup-bienvenida" role="dialog" aria-modal="true" aria-labelledby="popup-titulo">
+
+  <div class="popup-header">
+    <div class="popup-header-text">
+        <span>Switzerland</span>
+    </div>
+  </div>
+
+  <div class="popup-body">
+    <div class="popup-logo">Suiza Turismo</div>
+    <h2 id="popup-titulo">¡Bienvenido!</h2>
+    <p id="popup-texto">Descubre los paisajes alpinos, ciudades históricas y experiencias únicas de Suiza.</p>
+    <button id="popup-cerrar">Explorar</button>
+  </div>
+
+</div>
+
+<script>
+  (function() {
+    const mensajes = {
+      es: {
+        titulo: "¡Bienvenido!",
+        texto: "Descubre los paisajes alpinos, ciudades históricas y experiencias únicas de Suiza.",
+        boton: "Explorar"
+      },
+      en: {
+        titulo: "Welcome!",
+        texto: "Discover the alpine landscapes, historic cities and unique experiences of Switzerland.",
+        boton: "Explore"
+      }
+    };
+
+    const lang = localStorage.getItem("language") || "es";
+    const msg = mensajes[lang];
+
+    document.getElementById("popup-titulo").textContent = msg.titulo;
+    document.getElementById("popup-texto").textContent = msg.texto;
+    document.getElementById("popup-cerrar").textContent = msg.boton;
+
+    const popup = document.getElementById("popup-bienvenida");
+    const overlay = document.getElementById("popup-overlay");
+    const cerrar = document.getElementById("popup-cerrar");
+
+    // Mostrar con pequeño delay
+    setTimeout(function() {
+      popup.classList.add("visible");
+      overlay.classList.add("visible");
+      cerrar.focus();
+    }, 600);
+
+    // Cerrar al hacer clic en el botón o en el overlay
+    function cerrarPopup() {
+      popup.classList.remove("visible");
+      overlay.classList.remove("visible");
+    }
+
+    cerrar.addEventListener("click", cerrarPopup);
+    overlay.addEventListener("click", cerrarPopup);
+
+    // Cerrar con Escape
+    document.addEventListener("keydown", function(e) {
+      if (e.key === "Escape") cerrarPopup();
+    });
+  })();
+</script>
+
+</body>
+</html>

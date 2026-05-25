@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre las ciudades históricas de Suiza: Lucerna, Zúrich, Berna y Schaffhausen.">
+  <title>Ciudades Históricas — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="index.html#destinos" data-i18n="destinos">Destinos</a></li>
+        <li><a href="index.html#experiencias" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO CIUDADES -->
+    <section class="hero hero-ciudades" aria-labelledby="hero-titulo">
+      <div class="hero-content">
+        <h1 id="hero-titulo" data-i18n="ciudades_page_title">
+          Ciudades Históricas de Suiza
+        </h1>
+        <p data-i18n="ciudades_page_desc">
+          Suiza cuenta con ciudades llenas de historia, cultura y arquitectura impresionante.
+        </p>
+      </div>
+    </section>
+
+    <!-- CIUDADES DESTACADAS -->
+    <section class="destinos" aria-labelledby="ciudades-section-titulo">
+
+      <h2 id="ciudades-section-titulo" data-i18n="ciudades_section_title">
+        Ciudades Destacadas
+      </h2>
+
+      <div class="destinos-grid">
+
+        <!-- LUCERNA -->
+        <article class="destino-card fade-in" aria-labelledby="lucerna-titulo">
+          
+          <img
+            src="images/lucerna.jpg"
+            alt="Vista panorámica del centro histórico de Lucerna con el puente Kapellbrücke y la Torre del Agua sobre el río Reuss, la iglesia jesuita de cúpula verde y los Alpes nevados al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="lucerna-titulo" data-i18n="lucerna_title">Lucerna</h3>
+            <p data-i18n="lucerna_desc">Ciudad pintoresca a orillas del lago con arquitectura medieval.</p>
+            <ul class="destino-datos" aria-label="Información turística de Lucerna">
+              <li data-i18n="lucerna_highlight">⭐ Destacado: Puente Kapellbrücke</li>
+              <li data-i18n="lucerna_time">⏱ Tiempo recomendado: 1 – 2 días</li>
+              <li data-i18n="lucerna_activity">🚶 Actividad: recorrer el casco histórico</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- ZÚRICH -->
+        <article class="destino-card fade-in" aria-labelledby="zurich-titulo">
+          
+          <img
+            src="images/zurich.jpg"
+            alt="Puente Münsterbrücke de arcos de piedra sobre el río Limmat en Zúrich al atardecer, con faroles encendidos, la torre con reloj de la iglesia Fraumünster al fondo y edificios históricos del casco antiguo reflejados en el agua"
+          >
+          <div class="destino-info">
+            <h3 id="zurich-titulo" data-i18n="zurich_title">Zúrich</h3>
+            <p data-i18n="zurich_desc">La ciudad más grande de Suiza y su centro financiero.</p>
+            <ul class="destino-datos" aria-label="Información turística de Zúrich">
+              <li data-i18n="zurich_highlight">⭐ Destacado: Bahnhofstrasse</li>
+              <li data-i18n="zurich_time">⏱ Tiempo recomendado: 2 días</li>
+              <li data-i18n="zurich_activity">🏛 Actividad: museos y casco antiguo</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- BERNA -->
+        <article class="destino-card fade-in" aria-labelledby="berna-titulo">
+          
+          <img
+            src="images/berna.jpg"
+            alt="Vista panorámica del casco histórico de Berna desde las orillas del río Aare de color turquesa, con casas coloridas de tejados naranjas y la aguja gótica de la Catedral de Berna al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="berna-titulo" data-i18n="berna_title">Berna</h3>
+            <p data-i18n="berna_desc">Capital de Suiza con centro histórico medieval.</p>
+            <ul class="destino-datos" aria-label="Información turística de Berna">
+              <li data-i18n="berna_highlight">⭐ Destacado: Torre Zytglogge</li>
+              <li data-i18n="berna_time">⏱ Tiempo recomendado: 1 día</li>
+              <li data-i18n="berna_activity">🏰 Actividad: recorrer el casco histórico</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- SCHAFFHAUSEN -->
+        <article class="destino-card fade-in" aria-labelledby="schaffhausen-titulo">
+          
+          <img
+            src="images/schaffhausen.jpg"
+            alt="Vista desde el río Rin de la ciudad de Schaffhausen con la fortaleza Munot del siglo XVI en lo alto de la colina, rodeada de viñedos, con edificios medievales de fachadas rojas y un barco turístico atracado"
+          >
+          <div class="destino-info">
+            <h3 id="schaffhausen-titulo" data-i18n="schaffhausen_title">Schaffhausen</h3>
+            <p data-i18n="schaffhausen_desc">Ciudad histórica cerca de las Cataratas del Rin.</p>
+            <ul class="destino-datos" aria-label="Información turística de Schaffhausen">
+              <li data-i18n="schaffhausen_highlight">⭐ Destacado: Fortaleza Munot</li>
+              <li data-i18n="schaffhausen_time">⏱ Tiempo recomendado: 1 día</li>
+              <li data-i18n="schaffhausen_activity">🌊 Actividad: visitar las Cataratas del Rin y el Castillo de Munot</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <section aria-labelledby="footer-contacto">
+        <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+        <address>
+            <p>info@suizaturismo.ch</p>
+            <p>+41 800 100 200</p>
+            <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+      <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+  ↑
+</button>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- FADE IN SCROLL -->
+<script>
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+
+<!-- NAVBAR SCROLL -->
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

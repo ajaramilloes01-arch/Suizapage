@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre las rutas de trenes panorámicos de Suiza: Glacier Express, Bernina Express, GoldenPass y Gotthard.">
+  <title>Trenes Panorámicos — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="index.html#destinos" data-i18n="destinos">Destinos</a></li>
+        <li><a href="index.html#experiencias" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO TRENES -->
+    <section class="hero hero-trenes" aria-labelledby="hero-titulo">
+      <div class="hero-content">
+        <h1 id="hero-titulo" data-i18n="trenes_page_title">
+          Trenes Panorámicos de Suiza
+        </h1>
+        <p data-i18n="trenes_page_desc">
+          Viajes inolvidables a través de los paisajes alpinos
+        </p>
+      </div>
+    </section>
+
+    <!-- RUTAS DE TRENES -->
+    <section class="destinos" aria-labelledby="trenes-section-titulo">
+
+      <h2 id="trenes-section-titulo" data-i18n="trenes_section_title">
+        Rutas Famosas
+      </h2>
+
+      <div class="destinos-grid">
+
+        <!-- GLACIER EXPRESS -->
+        <article class="destino-card fade-in" aria-labelledby="glacier-titulo">
+          
+          <img
+            src="images/glacier.jpg"
+            alt="Tren rojo de la Rhaetische Bahn avanzando por un paisaje invernal completamente cubierto de nieve en el paso de la Bernina, con montañas alpinas nevadas y postes de alta tensión al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="glacier-titulo" data-i18n="glacier_title">Glacier Express</h3>
+            <p data-i18n="glacier_desc">Uno de los trenes panorámicos más famosos del mundo.</p>
+            <ul class="destino-datos" aria-label="Información turística del Glacier Express">
+              <li data-i18n="glacier_highlight">⭐ Destacado: cruza 291 puentes</li>
+              <li data-i18n="glacier_time">⏱ Duración del viaje: 8 horas</li>
+              <li data-i18n="glacier_activity">🚆 Actividad: viaje panorámico alpino</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- BERNINA EXPRESS -->
+        <article class="destino-card fade-in" aria-labelledby="bernina-titulo">
+          
+          <img
+            src="images/bernina.jpg"
+            alt="Tren rojo del Bernina Express recorriendo una curva en las laderas alpinas entre bosques de coníferas y pinos, con picos nevados de los Alpes en el horizonte en un día nublado de otoño"
+          >
+          <div class="destino-info">
+            <h3 id="bernina-titulo" data-i18n="bernina_title">Bernina Express</h3>
+            <p data-i18n="bernina_desc">Ruta espectacular entre Suiza e Italia.</p>
+            <ul class="destino-datos" aria-label="Información turística del Bernina Express">
+              <li data-i18n="bernina_highlight">⭐ Destacado: Patrimonio UNESCO</li>
+              <li data-i18n="bernina_time">⏱ Duración del viaje: 4 horas</li>
+              <li data-i18n="bernina_activity">🏔 Actividad: vistas alpinas</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- GOLDENPASS LINE -->
+        <article class="destino-card fade-in" aria-labelledby="golden-titulo">
+          
+          <img
+            src="images/golden.jpg"
+            alt="Tren moderno azul verdoso del GoldenPass Express pasando frente a un pueblo suizo con iglesia de campanario puntiagudo, rodeado de praderas verdes y montañas boscosas en verano"
+          >
+          <div class="destino-info">
+            <h3 id="golden-titulo" data-i18n="golden_title">GoldenPass Line</h3>
+            <p data-i18n="golden_desc">Ruta panorámica entre Lucerna y Montreux.</p>
+            <ul class="destino-datos" aria-label="Información turística del GoldenPass">
+              <li data-i18n="golden_highlight">⭐ Destacado: vistas de lagos y viñedos</li>
+              <li data-i18n="golden_time">⏱ Duración del viaje: 5 horas</li>
+              <li data-i18n="golden_activity">🚞 Actividad: tren panorámico</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- GOTTHARD PANORAMA EXPRESS -->
+        <article class="destino-card fade-in" aria-labelledby="gotthard-titulo">
+          
+          <img
+            src="images/gotthard.jpg"
+            alt="Tren de alta velocidad SBB ICN blanco y rojo en la estación alpina de Göschenen, con la imponente montaña del Gotardo cubierta parcialmente de nieve y nubes al fondo"
+          >
+          <div class="destino-info">
+            <h3 id="gotthard-titulo" data-i18n="gotthard_title">Gotthard Panorama Express</h3>
+            <p data-i18n="gotthard_desc">Combina viaje en tren y barco panorámico.</p>
+            <ul class="destino-datos" aria-label="Información turística del Gotthard Panorama Express">
+              <li data-i18n="gotthard_highlight">⭐ Destacado: ruta histórica alpina</li>
+              <li data-i18n="gotthard_time">⏱ Duración del viaje: 6 horas</li>
+              <li data-i18n="gotthard_activity">🚢 Actividad: barco y tren</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+      <section aria-labelledby="footer-contacto">
+        <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+        <address>
+            <p>info@suizaturismo.ch</p>
+            <p>+41 800 100 200</p>
+            <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+     <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+  ↑
+</button>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- FADE IN SCROLL -->
+<script>
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+
+<!-- NAVBAR SCROLL -->
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>

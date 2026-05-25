@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Descubre los mejores destinos de los Alpes Suizos: Zermatt, Matterhorn, Jungfrau e Interlaken.">
+  <title>Alpes Suizos — Suiza Turismo</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <div id="language-status" aria-live="polite" class="visually-hidden"></div>
+
+  <!-- CABECERA Y NAVEGACIÓN PRINCIPAL -->
+  <header role="banner">
+    <nav class="navbar" aria-label="Navegación principal">
+
+      <div class="logo" aria-label="Suiza Turismo - Inicio">
+        <a href="index.html"><span>Suiza Turismo</span></a>
+      </div>
+
+      <button
+        class="menu-toggle"
+        aria-controls="nav-menu"
+        aria-expanded="false"
+        aria-label="Abrir menú de navegación"
+      >
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+        <span class="hamburger-bar"></span>
+      </button>
+
+      <ul class="nav-links" id="nav-menu" role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="index.html#destinos" data-i18n="destinos">Destinos</a></li>
+        <li><a href="index.html#experiencias" data-i18n="experiencias">Experiencias</a></li>
+        <li>
+          <label for="language" class="visually-hidden">Seleccionar idioma</label>
+          <select id="language" aria-label="Idioma del sitio">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+        </li>
+      </ul>
+
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- HERO ALPES -->
+    <section class="hero hero-alpes" aria-labelledby="hero-titulo">
+      <div class="hero-content">
+        <h1 id="hero-titulo" data-i18n="alpes_page_title">
+          Explora los Alpes Suizos
+        </h1>
+        <p data-i18n="alpes_page_desc">
+          Destinos alpinos imperdibles para naturaleza y aventura
+        </p>
+      </div>
+    </section>
+
+    <!-- DESTINOS ALPINOS -->
+    <section class="destinos" aria-labelledby="alpes-section-titulo">
+
+      <h2 id="alpes-section-titulo" data-i18n="alpes_section_title">
+        Lugares Destacados
+      </h2>
+
+      <div class="destinos-grid">
+
+        <!-- ZERMATT -->
+        <article class="destino-card fade-in" aria-labelledby="zermatt-titulo">
+          
+          <img
+            src="images/zermatt.jpg"
+            alt="Vista nocturna del pueblo alpino de Zermatt cubierto de nieve al amanecer, con cientos de chalets y hoteles iluminados y la silueta piramidal del Matterhorn destacando al fondo bajo un cielo azul de madrugada"
+          >
+          <div class="destino-info">
+            <h3 id="zermatt-titulo" data-i18n="zermatt_title">Zermatt</h3>
+            <p data-i18n="zermatt_desc">Pueblo alpino famoso por el Matterhorn y el esquí.</p>
+            <ul class="destino-datos" aria-label="Información turística de Zermatt">
+              <li data-i18n="zermatt_highlight">⭐ Destacado: vistas del Matterhorn</li>
+              <li data-i18n="zermatt_time">⏱ Tiempo recomendado: 2 – 3 días</li>
+              <li data-i18n="zermatt_activity">🎿 Actividad: esquí y senderismo</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- MATTERHORN -->
+        <article class="destino-card fade-in" aria-labelledby="matterhorn-titulo">
+          
+          <img
+            src="images/matterhorn.jpg"
+            alt="Reflejo perfecto del Matterhorn en el lago Riffelsee cerca de Zermatt, con la montaña cubierta de nieve y sus paredes rocosas duplicadas simétricamente en las aguas calmas bajo cielo azul"
+          >
+          <div class="destino-info">
+            <h3 id="matterhorn-titulo" data-i18n="matterhorn_title">Matterhorn</h3>
+            <p data-i18n="matterhorn_desc">Una de las montañas más icónicas del mundo.</p>
+            <ul class="destino-datos" aria-label="Información turística del Matterhorn">
+              <li data-i18n="matterhorn_highlight">⭐ Destacado: montaña símbolo de Suiza</li>
+              <li data-i18n="matterhorn_time">⏱ Tiempo recomendado: 1 – 2 días</li>
+              <li data-i18n="matterhorn_activity">🥾 Actividad: senderismo y fotografía</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- JUNGFRAU -->
+        <article class="destino-card fade-in" aria-labelledby="jungfrau-titulo">
+          
+          <img
+            src="images/jungfrau.jpg"
+            alt="Observatorio Sphinx con su cúpula metálica plateada en la cima del Jungfraujoch a 3571 metros, construido sobre una roca escarpada cubierta de nieve con turistas visibles en la terraza exterior"
+          >
+          <div class="destino-info">
+            <h3 id="jungfrau-titulo" data-i18n="jungfrau_title">Región Jungfrau</h3>
+            <p data-i18n="jungfrau_desc">Glaciares, trenes de montaña y vistas espectaculares.</p>
+            <ul class="destino-datos" aria-label="Información turística de la Región Jungfrau">
+              <li data-i18n="jungfrau_highlight">⭐ Destacado: Jungfraujoch Top of Europe</li>
+              <li data-i18n="jungfrau_time">⏱ Tiempo recomendado: 2 días</li>
+              <li data-i18n="jungfrau_activity">🚞 Actividad: tren panorámico</li>
+            </ul>
+          </div>
+        </article>
+
+        <!-- INTERLAKEN -->
+        <article class="destino-card fade-in" aria-labelledby="interlaken-titulo">
+          
+          <img
+            src="images/interlaken.jpg"
+            alt="Parapentista en tándem sobrevolando el centro de Interlaken con su paracaídas amarillo y rojo, con hoteles Belle Époque, praderas verdes y las montañas alpinas de fondo en otoño"
+          >
+          <div class="destino-info">
+            <h3 id="interlaken-titulo" data-i18n="interlaken_title">Interlaken</h3>
+            <p data-i18n="interlaken_desc">Capital suiza de los deportes de aventura.</p>
+            <ul class="destino-datos" aria-label="Información turística de Interlaken">
+              <li data-i18n="interlaken_highlight">⭐ Destacado: parapente sobre los Alpes</li>
+              <li data-i18n="interlaken_time">⏱ Tiempo recomendado: 2 – 3 días</li>
+              <li data-i18n="interlaken_activity">🪂 Actividad: parapente y rafting</li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- PIE DE PÁGINA -->
+  <footer role="contentinfo">
+    <div class="footer-container">
+
+    <section aria-labelledby="footer-contacto">
+      <h3 id="footer-contacto" data-i18n="contacto">Información de Contacto</h3>
+      <address>
+        <p>info@suizaturismo.ch</p>
+        <p>+41 800 100 200</p>
+        <p>Zúrich, Suiza</p>
+      </address>
+    </section>
+
+    <section aria-labelledby="footer-enlaces">
+        <h3 id="footer-enlaces" data-i18n="enlaces">Enlaces Rápidos</h3>
+        <ul role="list">
+        <li><a href="index.html" data-i18n="inicio">Inicio</a></li>
+        <li><a href="destinos.html" data-i18n="destinos">Destinos</a></li>
+        <li><a href="experiencias.html" data-i18n="experiencias">Experiencias</a></li>
+      </ul>
+    </section>
+
+      <section aria-labelledby="footer-redes">
+        <h3 id="footer-redes" data-i18n="redes">Síguenos</h3>
+        <ul class="social-links" role="list">
+          <li><span aria-hidden="true">Facebook</span></li>
+          <li><span aria-hidden="true">Instagram</span></li>
+          <li><span aria-hidden="true">Twitter</span></li>
+     </ul>
+    </section>
+
+    </div>
+    <p class="copy">©2026 Suiza Turismo. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="javascript/lang.js"></script>
+
+  <script>
+    const menuToggle = document.querySelector('.menu-toggle');
+    const navMenu = document.getElementById('nav-menu');
+
+    menuToggle.addEventListener('click', function () {
+      const isOpen = navMenu.classList.toggle('open');
+      menuToggle.setAttribute('aria-expanded', isOpen);
+      menuToggle.setAttribute('aria-label', isOpen ? 'Cerrar menú de navegación' : 'Abrir menú de navegación');
+    });
+
+    navMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+      });
+    });
+
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+        navMenu.classList.remove('open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Abrir menú de navegación');
+        menuToggle.focus();
+      }
+    });
+  </script>
+
+<!-- BOTÓN VOLVER ARRIBA -->
+<button id="btn-top" aria-label="Volver al inicio de la página" title="Volver arriba">
+  ↑
+</button>
+
+<script>
+  const btnTop = document.getElementById('btn-top');
+
+  window.addEventListener('scroll', function () {
+    if (window.scrollY > 300) {
+      btnTop.classList.add('visible');
+    } else {
+      btnTop.classList.remove('visible');
+    }
+  });
+
+  btnTop.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+</script>
+
+<!-- FADE IN SCROLL -->
+<script>
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.fade-in').forEach(function(el) {
+    observer.observe(el);
+  });
+</script>
+
+
+<!-- NAVBAR SCROLL -->
+<script>
+  const navbar = document.querySelector('.navbar');
+
+  window.addEventListener('scroll', function () {
+    const scrollY = window.scrollY || document.documentElement.scrollTop;
+    if (scrollY > 10) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
+
+</body>
+</html>
