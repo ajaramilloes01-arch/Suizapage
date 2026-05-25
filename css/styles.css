@@ -1,0 +1,903 @@
+/* =============================================
+   RESET Y BASE
+   ============================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif; 
+}
+
+body {
+  background: #fafafa;
+  color: #333;
+  line-height: 1.6;
+  font-size: 16px;
+}
+html, body {
+  width: 100%;
+  overflow-x: hidden;
+}
+/* Clase de accesibilidad */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+/* =============================================
+   ACCESIBILIDAD — FOCUS VISIBLE
+   ============================================= */
+a:focus-visible,
+button:focus-visible,
+select:focus-visible {
+  outline: 3px solid #e4002b;
+  outline-offset: 3px;
+}
+
+
+/* =============================================
+   NAVBAR
+   ============================================= */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  background: white;
+  position: fixed;  
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  transition: padding 0.3s, box-shadow 0.3s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.logo a {
+  text-decoration: none;
+}
+
+.logo span {
+  color: #e4002b;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+  align-items: center;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  font-weight: 400;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: #e4002b;
+}
+
+/* Botón hamburguesa — oculto en escritorio */
+.menu-toggle { 
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.hamburger-bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: #333;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  min-height: 90vh;
+  background: url("../images/suiza.jpg") center/cover no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+}
+
+/* Clases hero para páginas internas */
+.hero-alpes    { background-image: url("../images/alpes.jpg"); }
+.hero-ciudades { background-image: url("../images/ciudades.jpg"); }
+.hero-lagos    { background-image: url("../images/lago.jpg"); }
+.hero-trenes   { background-image: url("../images/trenes.jpg"); }
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.65);
+  padding: 40px;
+  border-radius: 10px;
+  max-width: 700px;
+  width: 90%;
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-bottom: 0;
+}
+
+.hero-buttons {
+  margin-top: 20px;
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  .hero-experiencias {
+  background-image: url('../images/gastronomia.jpg');
+}
+
+.hero-destinos {
+  background-image: url('../images/alpes.jpg');
+
+}
+.hero-destinos {
+  background-image: url('../images/alpes.jpg');
+}
+
+.hero-experiencias {
+  background-image: url('../images/gastronomia.jpg');
+}
+
+.card-tag {
+  display: inline-block;
+  background: #e4002b;
+  color: white;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Botones */
+.btn {
+  padding: 12px 25px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  font-weight: 600;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-2px);
+}
+
+.primary {
+  background: #e4002b;
+  color: white;
+}
+
+.secondary {
+  background: white;
+  color: #333;
+}
+}
+
+/* =============================================
+   SECCIÓN DESTINOS (INDEX)
+   ============================================= */
+.destinos {
+  padding: 80px 10%;
+  text-align: center;
+}
+
+.destinos h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 25px;
+  margin-top: 40px;
+  list-style: none;
+  padding: 0;
+}
+
+.card {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover,
+.card:focus {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 16px;
+  text-align: left;
+}
+
+.card-body h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.card-body p {
+  font-size: 14px;
+  color: #666;
+}
+
+
+/* =============================================
+   SECCIÓN EXPERIENCIAS
+   ============================================= */
+.experiencias {
+  padding: 80px 10%;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.experiencias h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.experiencias-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.experiencia-card {
+  position: relative;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.experiencia-card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 30px 20px 20px;
+}
+
+.overlay h3 {
+  margin-bottom: 4px;
+}
+
+
+/* =============================================
+   SECCIÓN CTA
+   ============================================= */
+.cta {
+  background: #e4002b;
+  color: white;
+  text-align: center;
+  padding: 70px 20px;
+}
+
+.cta h2 {
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.cta-btn {
+  margin-top: 20px;
+  padding: 14px 32px;
+  border-radius: 6px;
+  background: white;
+  color: #e4002b;
+  font-weight: 600;
+  font-size: 16px;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.2s;
+}
+
+.cta-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+
+/* =============================================
+   FOOTER
+   ============================================= */
+footer {
+  background: #0a3f5c;
+  color: white;
+  padding: 50px 10%;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-bottom: 30px;
+  flex-wrap: wrap;
+}
+
+.footer-container h3 {
+  margin-bottom: 12px;
+  font-size: 16px;
+}
+
+/* Lista de enlaces del footer sin bullets */
+.footer-container ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-container li {
+  margin-bottom: 8px;
+}
+
+.footer-container a {
+  color: rgba(255,255,255,0.8);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.footer-container a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+address {
+  font-style: normal;
+}
+
+address p {
+  margin-bottom: 6px;
+}
+
+/* Redes sociales en línea */
+.social-links {
+  display: flex;
+  gap: 16px;
+  list-style: none;
+  padding: 0;
+}
+
+.copy {
+  text-align: center;
+  opacity: 0.7;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  padding-top: 20px;
+}
+
+
+/* =============================================
+   PÁGINAS DE DESTINO — GRID DE CARDS GRANDES
+   ============================================= */
+.destinos-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 40px;
+  margin-top: 50px;
+}
+
+/* Card grande con imagen lateral */
+.destino-card {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.destino-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+}
+
+.destino-card img {
+  width: 45%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+  flex-shrink: 0;
+}
+
+.destino-info {
+  padding: 25px;
+  text-align: left;
+  flex: 1;
+}
+
+.destino-info h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: #0a3f5c;
+}
+
+.destino-info p {
+  color: #444;
+  margin-bottom: 15px;
+  line-height: 1.5;
+}
+
+/* Lista de datos turísticos */
+.destino-datos {
+  list-style: none;
+  padding: 0;
+}
+
+.destino-datos li {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+
+/* =============================================
+   REDUCCIÓN DE MOVIMIENTO — ACCESIBILIDAD
+      ============================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* =============================================
+   RESPONSIVE — TABLET (max 900px)
+   ============================================= */
+@media (max-width: 900px) {
+
+  .navbar {
+    padding: 15px 30px;
+    flex-wrap: wrap;
+  }
+
+  /* Mostrar botón hamburguesa */
+  .menu-toggle {
+    display: flex;
+  }
+
+  /* Menú colapsado por defecto en móvil */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    padding: 16px 0 8px;
+    gap: 12px;
+  }
+
+  
+  .nav-links.open {
+    display: flex;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .destinos-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .destino-card {
+    flex-direction: column;
+  }
+
+  .destino-card img {
+    width: 100%;
+    height: 220px;
+  }
+
+  .experiencias-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+}
+
+
+/* =============================================
+   RESPONSIVE — MÓVIL (max 480px)
+   ============================================= */
+@media (max-width: 480px) {
+
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .hero {
+    min-height: 70vh;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  .hero-content {
+    padding: 24px 20px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .destinos {
+    padding: 50px 5%;
+  }
+
+  .destinos h2,
+  .experiencias h2,
+  .cta h2 {
+    font-size: 24px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .experiencias {
+    padding: 50px 5%;
+  }
+
+  .experiencia-card img {
+    height: 200px;
+  }
+
+  .cta {
+    padding: 50px 20px;
+  }
+
+  footer {
+    padding: 40px 5%;
+  }
+
+}
+  /* =============================================
+   BOTÓN VOLVER ARRIBA
+   ============================================= */
+#btn-top {
+  position: fixed;
+  bottom: 40px;
+  right: 50px;
+  left: auto;
+  min-width: 56px;
+  min-height: 56px;
+  width: 56px;
+  height: 56px;
+  background: #e4002b;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  font-size: 26px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, transform 0.3s;
+  z-index: 9999;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+  outline: 3px solid white;
+}
+#btn-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#btn-top:hover {
+  transform: translateY(-4px);
+  background: #c0001f;
+}
+/* =============================================
+   SLIDER HERO
+   ============================================= */
+.slider-hero {
+  position: relative;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease;
+  z-index: 0;
+}
+
+.slide.active {
+  opacity: 1;
+  z-index: 1;
+}
+
+.slider-hero .hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+/* Flechas */
+.slider-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  color: white;
+  border: 2px solid rgba(255,255,255,0.6);
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  z-index: 3;
+  transition: background 0.2s, transform 0.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.slider-btn:hover {
+  background: rgba(0,0,0,0.7);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.slider-btn.prev { left: 24px; }
+.slider-btn.next { right: 24px; }
+
+/* Indicadores (dots) */
+.slider-dots {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 3;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.5);
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: white;
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+  .slider-btn {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+  .slider-btn.prev { left: 12px; }
+  .slider-btn.next { right: 12px; }
+
+  }
+  /* =============================================
+   ANIMACIÓN FADE-IN AL HACER SCROLL
+   ============================================= */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+/* =============================================
+   NAVBAR STICKY CON EFECTO SCROLL
+   ============================================= */
+.navbar.scrolled {
+  padding: 10px 80px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.18);
+  border-bottom: 3px solid #e4002b;
+  background: white;
+}
+
+/* =============================================
+   POPUP BIENVENIDA
+   ============================================= */
+#popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease;
+}
+
+#popup-overlay.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+#popup-bienvenida {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: linear-gradient(135deg, #0a3f5c 0%, #1a6b8a 50%, #e4002b 100%);
+  border-radius: 20px;
+  padding: 0;
+  text-align: center;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  z-index: 10000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-width: 440px;
+  width: 90%;
+  overflow: hidden;
+}
+
+#popup-bienvenida.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.popup-header {
+  background: url('../images/suizainicio.jpg') center/cover no-repeat;
+  height: 560px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.popup-header::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.popup-header-text {
+  position: relative;
+  z-index: 1;
+  color: white;
+}
+
+.popup-header-text .popup-flag {
+  font-size: 52px;
+  display: block;
+  margin-bottom: 6px;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.5));
+}
+
+.popup-header-text span {
+  font-size: 13px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.9;
+  font-weight: 300;
+}
+
+.popup-body {
+  background: white;
+  padding: 32px 36px 48px;
+}
+
+.popup-logo {
+  color: #e4002b;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+#popup-bienvenida h2 {
+  font-size: 26px;
+  color: #0a3f5c;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+#popup-bienvenida p {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 28px;
+  line-height: 1.7;
+}
+
+#popup-cerrar {
+  background: linear-gradient(135deg, #e4002b, #c0001f);
+  color: white;
+  border: none;
+  padding: 14px 40px;
+  border-radius: 50px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 4px 15px rgba(228,0,43,0.4);
+  letter-spacing: 0.5px;
+}
+
+#popup-cerrar:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(228,0,43,0.5);
+}
